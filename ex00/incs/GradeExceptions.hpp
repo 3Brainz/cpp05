@@ -2,11 +2,11 @@
 #include <iostream>
 #include <stdexcept>
 
-class BureaucratExceptions : virtual public std::exception
+class GradeExceptions : virtual public std::exception
 {
 	public:
-		explicit BureaucratExceptions(const std::string & errLine);
-		virtual ~BureaucratExceptions() throw () {}
+		explicit GradeExceptions(const std::string & errLine);
+		virtual ~GradeExceptions() throw () {}
 		/*funcs*/
 		virtual const char* what() const throw();
 	private:

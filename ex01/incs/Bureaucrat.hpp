@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
+class Bureaucrat;
 #include <GradeExceptions.hpp>
+#include <Form.hpp>
 
 class Bureaucrat
 {
@@ -17,6 +19,7 @@ public:
 	/*Funcs*/
 	void		incrementGrade(void);
 	void		decrementGrade(void);
+	void		signForm(Form & form) const;
 	/*Exceptions*/
 	GradeExceptions	GradeTooHighException();
 	GradeExceptions	GradetooLowException();

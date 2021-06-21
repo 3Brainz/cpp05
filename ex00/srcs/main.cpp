@@ -6,7 +6,7 @@ int main()
 	{
 		Bureaucrat michele("michele", 200);
 	}
-	catch(const BureaucratExceptions& exc)
+	catch(const GradeExceptions& exc)
 	{
 		std::cerr << exc.what() << std::endl;
 	}
@@ -19,7 +19,7 @@ int main()
 		{
 			gino.incrementGrade();
 		}
-		catch(const BureaucratExceptions& exc)
+		catch(const GradeExceptions& exc)
 		{
 			std::cerr << exc.what() << std::endl;
 		}
@@ -31,7 +31,7 @@ int main()
 		{
 			gino.decrementGrade();
 		}
-		catch(const BureaucratExceptions& exc)
+		catch(const GradeExceptions& exc)
 		{
 			std::cerr << exc.what() << std::endl;
 		}

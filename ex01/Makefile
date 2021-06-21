@@ -16,6 +16,7 @@ INCDIR = 		./incs
 
 #files
 FILES =			Bureaucrat.cpp \
+				Form.cpp \
 				GradeExceptions.cpp \
 				main.cpp
 
