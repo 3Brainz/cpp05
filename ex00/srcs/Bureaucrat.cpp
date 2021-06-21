@@ -10,6 +10,22 @@ Bureaucrat::Bureaucrat(std::string const & name):
 			_grade(150)
 {}
 
+Bureaucrat::Bureaucrat(std::string const & name, int grade):
+			_name(name)
+{
+	// try
+	// {
+		if (grade > 150)
+			throw(GradetooLowException());
+		if (grade < 1)
+			throw(GradeTooHighException());
+	// }
+	// catch(const BureaucratExceptions & exc)
+	// {
+	// 	std::cerr << _name << " " << exc.what() << std::endl;
+	// }
+}
+
 Bureaucrat::~Bureaucrat()
 {
 }
@@ -44,44 +60,46 @@ int			Bureaucrat::getGrade(void) const
 
 void				Bureaucrat::decrementGrade(void)
 {
-	try
-	{
+	// try
+	// {
 		if (_grade == 150)
 			throw (GradetooLowException());
 		else
 			_grade += 1;
-	}
-	catch(BureaucratExceptions & exc)
-	{
-		std::cerr << exc.what() << std::endl;
-	}
+	// }
+	// catch(BureaucratExceptions & exc)
+	// {
+	// 	std::cerr << _name << " " << exc.what() << std::endl;
+	// }
 }
 
 void				Bureaucrat::incrementGrade(void)
 {
-	try
-		{
+	// try
+	// 	{
 			if (_grade == 1)
 				throw (GradeTooHighException());
 			else
 				_grade -= 1;
-		}
-		catch(BureaucratExceptions & exc)
-		{
-			std::cerr << exc.what() << std::endl;
-		}
+	// }
+	// catch(BureaucratExceptions & exc)
+	// {
+	// 	std::cerr << _name << " " << exc.what() << std::endl;
+	// }
 }
 
 /*exceptions*/
 
 BureaucratExceptions Bureaucrat::GradeTooHighException()
 {
-	return(BureaucratExceptions("GradeTooHighBro"));
+	std::string ret = _name + " GradeTooHighBro";
+	return(BureaucratExceptions(ret.c_str()));
 }
 
 BureaucratExceptions Bureaucrat::GradetooLowException()
 {
-	return (BureaucratExceptions("GradeTooLowMan"));
+	std::string ret = _name + " GradeTooLowMan";
+	return (BureaucratExceptions(ret.c_str()));
 }
 
 std::ostream & operator << (std::ostream & stream, const Bureaucrat &bureaucrat)
