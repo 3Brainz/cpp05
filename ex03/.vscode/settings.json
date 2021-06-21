@@ -1,0 +1,11 @@
+{
+	"files.associations": {
+		"bitset": "cpp",
+		"locale": "cpp",
+		"memory": "cpp",
+		"string": "cpp",
+		"ostream": "cpp",
+		"algorithm": "cpp",
+		"iosfwd": "cpp"
+	}
+}
