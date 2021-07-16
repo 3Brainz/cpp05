@@ -10,7 +10,6 @@ int main()
 	{
 		std::cerr << exc.what() << std::endl;
 	}
-	
 	Bureaucrat gino("gino");
 	for (int i = 0; i < 160; i++)
 	{
